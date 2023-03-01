@@ -18,7 +18,14 @@ namespace POO
         }
         public void Sacar(double valor)
         {
-            Saldo -= valor;
+            if(valor > Saldo)
+            {
+                Console.WriteLine("Saldo insuficiente");
+            }
+            else
+            {
+                Saldo -= valor;
+            }
         }
     }
 }
