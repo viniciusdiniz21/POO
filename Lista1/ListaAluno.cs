@@ -42,8 +42,11 @@ namespace ConsoleApp1
         }
         public void ApresentarDadosAluno()
         {
-            Console.WriteLine(RA);
-            Console.WriteLine(Nome);
+            Console.WriteLine($"RA: {RA}");
+            Console.WriteLine($"Nome: {Nome}");
+            Console.WriteLine($"NotaProva: {NotaProva}");
+            Console.WriteLine($"NotaTrabalho: {NotaTrabalho}");
+            Console.WriteLine($"NotaFinal: {NotaFinal}");
         }
 
     }
