@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lista1.Geometria
 {
-    public abstract class Forma : GerarForma
+    public abstract class Forma
     {
         public double Area { get; set; }
         public int Perimetro { get; set; }

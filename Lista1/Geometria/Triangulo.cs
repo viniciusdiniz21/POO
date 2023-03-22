@@ -13,8 +13,23 @@ namespace Lista1.Geometria
         public int LadoC { get; set; }
         public override void CalcularArea()
         {
+            void CalcularAreaTrianguloEscaleno()
+            {
+                double s = (LadoA + LadoB + LadoC) / 2;
+                Area = Math.Sqrt(s * (s - LadoA) * (s - LadoB) * (s - LadoC));
+            }
+            void CalcularAreaTrianguloIsosceles()
+            {
+                double baseTriangulo = Math.Max(Math.Max(LadoA, LadoB), LadoC);
+                double alturaTriangulo = Math.Sqrt((LadoB * LadoB) - ((baseTriangulo * baseTriangulo) / 4));
+                Area = (baseTriangulo * alturaTriangulo) / 2;
+            }
+            void CalcularAreaTrianguloEquilatero()
+            {
+                Area = (Math.Pow(LadoA, 2) * Math.Sqrt(3)) / 4;
+            }
             base.CalcularArea();
-            string VerificarTipoTriangulo(double lado1, double lado2, double lado3)
+            string VerificarTipoTriangulo(int lado1, int lado2, int lado3)
             {
                 if (lado1 <= 0 || lado2 <= 0 || lado3 <= 0)
                 {
@@ -38,24 +53,30 @@ namespace Lista1.Geometria
                 }
             }
             var tipo = VerificarTipoTriangulo(LadoA, LadoB, LadoC);
+            Console.WriteLine(tipo);
             switch (tipo)
             {
                 case "equilatero":
+                    CalcularAreaTrianguloEquilatero();
                     break;
                 case "isosceles":
+                    CalcularAreaTrianguloIsosceles();
                     break;
                 case "escaleno":
+                    CalcularAreaTrianguloEscaleno();
                     break;
                 default:
                     Console.WriteLine("Triangulo de proporções inválidas!");
                     break;
             }
+            Console.WriteLine($"Área: {Area}");
 
         }
         public override void CalcularPerimetro()
         {
             base.CalcularPerimetro();
             Perimetro = LadoA + LadoB + LadoC;
+            Console.WriteLine($"Perimetro: {Perimetro}");
         }
     }
 }

@@ -21,8 +21,7 @@ using Lista1.Geometria;
 //    lista[i].ApresentarDadosAluno();
 //}
 
-GerarForma forma;
-forma = new GerarForma();
+GerarForma forma = new GerarForma();
 
 forma.SolicitarForma();
 

@@ -21,29 +21,39 @@ namespace Lista1.Geometria
             {
                 case 1:
                     Console.WriteLine("Digite o valor do raio: ");
+                    var raio = Convert.ToDouble(Console.ReadLine());
+                    Circunferencia circunferencia = new Circunferencia();
+                    circunferencia.Raio = raio;
+                    circunferencia.CalcularPerimetro();
+                    circunferencia.CalcularArea();
                     break;
                 case 2:
                     Console.WriteLine("Digite o valor dos lados do Triangulo");
                     Console.WriteLine("Lado A");
-                    Convert.ToDouble(Console.ReadLine());
+                    var ladoATriangulo = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Lado B");
-                    Convert.ToDouble(Console.ReadLine());
+                    var ladoBTriangulo = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Lado C");
-                    Convert.ToDouble(Console.ReadLine());
+                    var ladoCTriangulo = Convert.ToInt32(Console.ReadLine());
+                    Triangulo triangulo = new Triangulo();
+                    triangulo.LadoA = ladoATriangulo;
+                    triangulo.LadoB = ladoBTriangulo;
+                    triangulo.LadoC = ladoCTriangulo;
+                    triangulo.CalcularPerimetro();
+                    triangulo.CalcularArea();
 
                     break;
                 case 3:
-                    Console.WriteLine("Digite o valor dos lados do Quadrado");
+                    Console.WriteLine("Digite o valor dos lados da forma quadratica");
                     Console.WriteLine("Lado A");
                     var ladoA = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Lado B");
-                    Convert.ToDouble(Console.ReadLine());
                     var ladoB = Convert.ToInt32(Console.ReadLine());
                     Quadrado quadrado = new Quadrado();
                     quadrado.LadoA = ladoA;
                     quadrado.LadoB = ladoB;
                     quadrado.CalcularPerimetro();
-                    Console.WriteLine(quadrado.Perimetro);
+                    quadrado.CalcularArea();
                     break;
                 default:
                     Console.WriteLine("Escolha uma forma válida");

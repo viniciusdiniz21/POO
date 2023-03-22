@@ -14,11 +14,13 @@ namespace Lista1.Geometria
         {
             base.CalcularArea();
             Area = LadoA * LadoB;
+            Console.WriteLine($"Área: {Area}");
         }
         public override void CalcularPerimetro()
         {
             base.CalcularPerimetro();
             Perimetro = (LadoA * 2) + (LadoB * 2);
+            Console.WriteLine($"Perimetro: {Perimetro}");
         }
     }
 }
