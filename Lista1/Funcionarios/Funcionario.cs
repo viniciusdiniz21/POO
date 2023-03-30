@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lista1.Vencimento
+namespace Lista1.Funcionarios
 {
-    public abstract class Empregado
+    public class Funcionario
     {
         public string Nome { get; set; }
-        public string Sobrenome { get; set; }
         public string Cpf { get; set; }
-        public abstract double Vencimento();
+        public List<Dependente> Dependentes { get; set; }
     }
 }

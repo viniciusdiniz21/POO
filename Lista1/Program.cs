@@ -1,5 +1,6 @@
 ﻿using ConsoleApp1;
 using Lista1;
+using Lista1.Funcionarios;
 using Lista1.Geometria;
 using Lista1.Impressora;
 using Lista1.Vencimento;
@@ -88,12 +89,18 @@ void Exercicio7()
             {
                 case 1:
                     Assalariado assalariado = new Assalariado();
+                    assalariado.Nome = nome;
+                    assalariado.Sobrenome = sobrenome;
+                    assalariado.Cpf = cpf;
                     Console.WriteLine("Digite o salario do empregado: ");
                     assalariado.Salario = Convert.ToDouble(Console.ReadLine());
                     assalariado.Vencimento();
                     break;
                 case 2:
                     Comissionado comissionado = new Comissionado();
+                    comissionado.Nome = nome;
+                    comissionado.Sobrenome = sobrenome;
+                    comissionado.Cpf = cpf;
                     Console.WriteLine("Digite o total de vendas do empregado: ");
                     comissionado.TotalVenda = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Digite a taxa de comissao do empregado: ");
@@ -102,6 +109,9 @@ void Exercicio7()
                     break;
                 case 3:
                     Horista horista = new Horista();
+                    horista.Nome = nome;
+                    horista.Sobrenome = sobrenome;
+                    horista.Cpf = cpf;
                     Console.WriteLine("Digite o valor da hora do empregado: ");
                     horista.PrecoHora = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Digite o total de horas trabalhadas do empregado: ");
@@ -115,8 +125,50 @@ void Exercicio7()
                     break;
             }
         } while (tipoEmpregado != 4);
-        Menu();
     }
+    Menu();
+}
+
+void Exercicio8()
+{
+    Controle controle = new Controle();
+    void Menu()
+    {
+        int opcao = 0;
+        do
+        {
+            Console.WriteLine("1-Adicionar Dependente \n 2-Remover Dependente \n 3-Sair");
+            opcao = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Digite o nome do funcionario: ");
+            var nome = Console.ReadLine();
+            Console.WriteLine("Digite o cpf do funcionario: ");
+            var cpf = Console.ReadLine();
+
+            switch (opcao)
+            {
+                case 1:
+                    controle.AdicionarFuncionario();
+                    break;
+                case 2:
+                    controle.RemoverFuncionario();
+                    break;
+                case 3:
+                    controle.AdicionarDependente();
+                    break;
+                case 4:
+                    controle.RemoverDependente();
+                    break;
+                case 5:
+                    return;
+                    break;
+                default:
+                    Console.WriteLine("Escolha uma opção válida");
+                    break;
+            }
+        } while (opcao != 5);
+    }
+    Menu();
+
 }
 
 //Exercicio1();
