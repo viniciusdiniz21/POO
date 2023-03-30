@@ -137,11 +137,11 @@ void Exercicio8()
         int opcao = 0;
         do
         {
-            Console.WriteLine("1-Adicionar Dependente \n 2-Remover Dependente \n 3-Sair");
+            Console.WriteLine("3-Adicionar Funcionário \n 4-Remover Funcionário \n 3-Adicionar Dependente \n 4-Remover Dependente \n 3-Sair");
             opcao = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Digite o nome do funcionario: ");
+            Console.WriteLine("Digite o nome do funcionário: ");
             var nome = Console.ReadLine();
-            Console.WriteLine("Digite o cpf do funcionario: ");
+            Console.WriteLine("Digite o cpf do funcionário: ");
             var cpf = Console.ReadLine();
 
             switch (opcao)
@@ -177,6 +177,8 @@ void Exercicio8()
 //Exercicio4();
 //Exercicio5();
 //Exercicio6();
+//Exercicio7();
+//Exercicio8();
 
 
 
