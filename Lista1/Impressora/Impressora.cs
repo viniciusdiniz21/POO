@@ -9,18 +9,18 @@ namespace Lista1.Impressora
     public class Impressora
     {
         public int qtdeCopia { get; set; }
-        private readonly Documento documento;
+        private readonly Documento _documento;
 
         public Impressora(Documento documento)
         {
             qtdeCopia = 1;
-            this.documento = documento;
+            _documento = documento;
         }
         public void Imprimir()
         {
             for (int i = 0; i < qtdeCopia; i++)
             {
-                Console.WriteLine(documento.texto);
+                Console.WriteLine(_documento.texto);
             }
         }
     }
