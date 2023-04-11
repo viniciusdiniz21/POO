@@ -174,7 +174,7 @@ void Exercicio8()
 //Exercicio1();
 //Exercicio2();
 //Exercicio3();
-//Exercicio4();
+Exercicio4();
 //Exercicio5();
 //Exercicio6();
 //Exercicio7();
